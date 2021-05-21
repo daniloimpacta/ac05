@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../static/imagens/lista-de-controle.png"/>
+    <title>Updated Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Student Update: {{student.ra}}</h1>
+    <div class="containerFormEditar">
+        <table border="1" class="table table-striped table-borderless">
+            <form action="/edit/{{student.id}}" method="POST">
+                <tr>
+                    <td>Type your name:</td>
+                    <td><input type="text" name="name" value="{{student.name}}" /></td>
+                </tr>
+                <tr>
+                    <td>Type your email:</td>
+                    <td><input type="text" name="email" value="{{student.email}}" /></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div class="botaoEditar">
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="/" class="btn btn-secondary">Voltar</a>
+                        </div>
+                    </th>
+                </tr>
+            </form>
+        </table>
+    </div>
+
+
+</body>
+</html>
